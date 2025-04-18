@@ -38,11 +38,39 @@ public class CellPhoneApplication {
         System.out.println("--------------------------------------------");
 
         // the Getters - gets the cellphone info to display
-        System.out.println("Serial number: " + myPhone.getSerialNumber());
-        System.out.println("Model: " + myPhone.getModel());
-        System.out.println("Carrier: " + myPhone.getCarrier());
-        System.out.println("Phone Number: " + myPhone.getPhoneNumber());
-        System.out.println("Owner: " + myPhone.getOwner());
+        // System.out.println("Serial number: " + myPhone.getSerialNumber());
+        // System.out.println("Model: " + myPhone.getModel());
+        // System.out.println("Carrier: " + myPhone.getCarrier());
+        // System.out.println("Phone Number: " + myPhone.getPhoneNumber());
+        // System.out.println("Owner: " + myPhone.getOwner());
+
+        // displays first phone info
+        display(myPhone);
+
+        // creates a second phone and sets the owner name and phone number
+        CellPhone myPhone2 = new CellPhone();
+        myPhone2.setOwner("David");
+        myPhone2.setPhoneNumber("888-555-1234");
+
+        // displays second phone info
+        display(myPhone2);
+
+        System.out.println("--------------------------------------------");
+
+        // phones dial each other with name and phone numbers
+        myPhone.dial(myPhone2.getPhoneNumber());
+        myPhone2.dial(myPhone.getPhoneNumber());
+
+    }
+
+    // displays the phones info
+    public static void display(CellPhone phone) {
+
+        System.out.println("Serial number: " + phone.getSerialNumber());
+        System.out.println("Model: " + phone.getModel());
+        System.out.println("Carrier: " + phone.getCarrier());
+        System.out.println("Phone Number: " + phone.getPhoneNumber());
+        System.out.println("Owner: " + phone.getOwner());
 
     }
 
