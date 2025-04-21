@@ -1,6 +1,5 @@
 package com.pluralsight;
 
-import java.awt.*;
 import java.util.Scanner;
 
 public class CellPhoneApplication {
@@ -60,6 +59,20 @@ public class CellPhoneApplication {
         // phones dial each other with name and phone numbers
         myPhone.dial(myPhone2.getPhoneNumber());
         myPhone2.dial(myPhone.getPhoneNumber());
+
+        // creates a third phone with the new constructor that takes in all the parameters
+        CellPhone myPhone3 = new CellPhone(266337, "iPhone 13 Pro", "ATT", "808-545-4004", "Mark");
+
+        System.out.println("--------------------------------------------");
+
+        // displays third phone with display method
+        display(myPhone3);
+
+        System.out.println("--------------------------------------------");
+
+        // uses overloaded constructor of dial to take the name and phone number from a new cell phone
+        myPhone.dial(myPhone3);
+        myPhone3.dial(myPhone);
 
     }
 
